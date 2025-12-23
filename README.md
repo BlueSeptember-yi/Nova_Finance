@@ -189,7 +189,7 @@ financial-manager/
 
 系统支持以下用户角色：
 
-- **Owner（企业主）**: 拥有所有权限，可管理企业信息和所有业务数据
+- **Owner（店主）**: 拥有所有权限，可管理企业信息和所有业务数据
 - **Accountant（会计）**: 负责会计科目、会计分录、财务报表等财务相关操作
 - **Sales（销售）**: 负责客户管理、销售订单、收款等销售相关操作
 - **Purchaser（采购）**: 负责供应商管理、采购订单、付款等采购相关操作
@@ -199,5 +199,5 @@ financial-manager/
 
 启动后端服务后，可通过以下地址访问API文档：
 
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
+- Swagger UI: `http://localhost:8080/docs`
+- ReDoc: `http://localhost:8080/redoc`
