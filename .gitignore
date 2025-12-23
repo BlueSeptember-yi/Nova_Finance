@@ -1,0 +1,10 @@
+# Python 垃圾
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Node.js 垃圾 (这个巨大，绝对不能传)
+node_modules/
+dist/
+.DS_Store
