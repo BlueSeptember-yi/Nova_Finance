@@ -82,10 +82,23 @@
     docker-compose up -d --build
     ```
 
-3.  **初始化管理员账号**
+3.  **获取初始管理员账号**
+
+    系统首次启动时会自动初始化数据库并创建一个默认的超级管理员（SuperAdmin）。请执行以下命令查看自动生成的账号和密码：
+
     ```bash
-    docker exec -it financial-manager-backend python scripts/create_super_admin.py
-    # 按照提示输入邮箱（账号）和密码
+    docker logs financial-manager-init-admin
+    ```
+
+    *请在输出日志中查找以下信息：（一般在倒数几行）*
+    *   **Username**: `superadmin`
+    *   **Password**: *(一串随机生成的字符)*
+
+    > **⚠️ 注意**：如果你没有在日志中找到密码，或者提示账号不存在，可以尝试手动创建：
+    > ```bash
+    > docker exec -it financial-manager-backend python scripts/create_super_admin.py
+    > ```
+
     ```
 
 4.  **访问系统**
