@@ -84,7 +84,7 @@
 
 3.  **初始化管理员账号**
     ```bash
-    docker exec -it ursbook_backend python scripts/create_super_admin.py
+    docker exec -it financial-manager-backend python scripts/create_super_admin.py
     # 按照提示输入邮箱（账号）和密码
     ```
 
