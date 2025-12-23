@@ -1,32 +1,30 @@
-# 财务管理系统
+# 🌟 Nova Finance
+### 下一代智能企业财务管理系统 | Next-Gen Enterprise Financial System
 
-## 项目简介
+> **Nova Finance** 是基于 URSBook 架构深度优化的现代化财务管理解决方案。我们致力于通过重构的前端交互体验（UI/UX）和容器化部署方案，为中小企业提供更高效、更直观的财务运营支持。
 
-NovaFinance 财务管理系统是一个基于Web的完整财务管理解决方案，采用前后端分离架构，支持多公司（多租户）运营模式。系统提供会计科目管理、会计分录、采购销售、库存管理、银行对账和财务报表等核心财务管理功能。
+---
 
-## 技术栈
+## 🚀 项目亮点 (Key Highlights)
 
-### 后端
-- Python 3.x
-- FastAPI 0.104.1
-- SQLAlchemy 2.0.23
-- MySQL 8.0+
-- JWT认证
-- Pydantic数据验证
+*   **🎨 全新交互界面**：基于 Ant Design 的深度定制，提供更清晰的数据可视化和操作流程。
+*   **🐳 Docker 一键部署**：告别繁琐的环境配置，开箱即用。
+*   **🏢 多租户架构**：支持多公司/多账套管理，数据严格隔离。
+*   **🔐 完备的权限体系**：基于角色的访问控制（RBAC），保障财务数据安全。
 
-### 前端
-- React 19.2.0
-- TypeScript 5.9.3
-- Ant Design 6.0.0
-- React Router 7.9.6
-- Axios 1.13.2
-- Vite 7.2.4
+---
 
-### 数据库
-- MySQL 8.0+
-- 字符集: utf8mb4
-- 存储引擎: InnoDB
+## 🛠 技术栈 (Tech Stack)
 
+| 模块 | 技术选型 | 说明 |
+| :--- | :--- | :--- |
+| **Frontend** | React 18 + TypeScript | 现代化组件开发 |
+| **UI Framework** | Ant Design + Vite | 高性能构建与精美组件 |
+| **Backend** | Python FastAPI | 高性能异步 Web 框架 |
+| **Database** | MySQL 8.0 | 稳定可靠的关系型数据库 |
+| **ORM** | SQLAlchemy | 灵活的数据库操作层 |
+
+---
 ## 功能特性
 
 ### 核心功能
@@ -63,94 +61,38 @@ NovaFinance 财务管理系统是一个基于Web的完整财务管理解决方�
 - 库存流水可追溯
 - 业务单据自动生成会计分录
 
-## 快速开始
+---
+## 📦 快速开始 (Docker 部署)
 
-### 环境要求
+**这是推荐的启动方式，适合所有用户。**
 
-- Python 3.8+
-- Node.js 16+
-- MySQL 8.0+
+### 前置要求
+*   安装 [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-### 数据库初始化
+### 启动步骤
 
-1. 创建MySQL数据库：
-```sql
-CREATE DATABASE ursbook CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
+1.  **克隆项目**
+    ```bash
+    git clone https://github.com/BlueSeptember-yi/nova-finance.git
+    cd nova-finance
+    ```
 
-2. 执行DDL脚本初始化数据库表结构：
-```bash
-mysql -u root -p ursbook < ddl.sql
-```
+2.  **一键启动**
+    ```bash
+    docker-compose up -d --build
+    ```
 
-### 后端启动
+3.  **初始化管理员账号**
+    ```bash
+    docker exec -it ursbook_backend python scripts/create_super_admin.py
+    # 按照提示输入邮箱（账号）和密码
+    ```
 
-1. 进入后端目录：
-```bash
-cd backend
-```
+4.  **访问系统**
+    *   前台页面: [http://localhost:8080](http://localhost:8080)
+    *   API 文档: [http://localhost:8001/docs](http://localhost:8001/docs)
 
-2. 创建虚拟环境（推荐）：
-```bash
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-```
-
-3. 安装依赖：
-```bash
-pip install -r requirements.txt
-```
-
-4. 配置环境变量（可选）：
-创建`.env`文件，配置数据库连接等信息：
-```
-DATABASE_URL=mysql+pymysql://root:root123@localhost:3306/ursbook?charset=utf8mb4
-SECRET_KEY=your-secret-key-change-this-in-production
-DEBUG=True
-```
-
-5. 启动服务：
-```bash
-python -m app.main
-```
-
-或使用uvicorn：
-```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-```
-
-后端服务默认运行在 `http://localhost:8000`
-API文档地址：`http://localhost:8000/docs`
-
-### 前端启动
-
-1. 进入前端目录：
-```bash
-cd frontend
-```
-
-2. 安装依赖：
-```bash
-npm install
-```
-
-3. 启动开发服务器：
-```bash
-npm run dev
-```
-
-前端服务默认运行在 `http://localhost:5173`
-
-### 创建超级管理员
-
-系统提供脚本用于创建超级管理员账户：
-
-```bash
-cd backend
-python scripts/create_super_admin.py
-```
-
-按照提示输入用户名、邮箱和密码即可创建超级管理员账户。
+---
 
 ## 项目结构
 
@@ -194,10 +136,3 @@ financial-manager/
 - **Sales（销售）**: 负责客户管理、销售订单、收款等销售相关操作
 - **Purchaser（采购）**: 负责供应商管理、采购订单、付款等采购相关操作
 - **SuperAdmin（超级管理员）**: 系统级别管理员，可管理所有公司
-
-## API文档
-
-启动后端服务后，可通过以下地址访问API文档：
-
-- Swagger UI: `http://localhost:8080/docs`
-- ReDoc: `http://localhost:8080/redoc`
