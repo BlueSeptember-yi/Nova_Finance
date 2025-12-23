@@ -74,7 +74,7 @@
 1.  **克隆项目**
     ```bash
     git clone https://github.com/BlueSeptember-yi/Nova_Finance.git
-    cd nova-finance
+    cd Nova_Finance
     ```
 
 2.  **一键启动**
