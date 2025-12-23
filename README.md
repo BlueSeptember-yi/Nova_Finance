@@ -1,7 +1,7 @@
 # 🌟 Nova Finance
 ### 下一代智能企业财务管理系统 | Next-Gen Enterprise Financial System
 
-> **Nova Finance** 是基于 URSBook 架构深度优化的现代化财务管理解决方案。我们致力于通过重构的前端交互体验（UI/UX）和容器化部署方案，为中小企业提供更高效、更直观的财务运营支持。
+> **Nova Finance** 是现代化财务管理解决方案。我们致力于通过重构的前端交互体验（UI/UX）和容器化部署方案，为中小企业提供更高效、更直观的财务运营支持。
 
 ---
 
