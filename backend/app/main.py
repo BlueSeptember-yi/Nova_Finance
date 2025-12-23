@@ -12,11 +12,11 @@ from app.routers import (
 
 settings = get_settings()
 
-# --- 这里是改动最关键的地方 ---
+
 app = FastAPI(
-    title="NovaFinance 财务核心系统",  # <--- 名字改这！
-    version="1.0.0 Final",             # <--- 版本号改这！
-    description="基于 FastAPI 与 React 构建的企业级财务管理解决方案。开发者：[你的名字] - 期末结课作业", # <--- 描述改这！
+    title="NovaFinance 财务核心系统", 
+    version="1.0.0 Final",            
+    description="基于 FastAPI 与 React 构建的企业级财务管理解决方案。开发者：吴明峰 信管T2301 8102230927 - 期末结课作业",
     docs_url="/docs",
     redoc_url="/redoc",
 )
@@ -52,14 +52,14 @@ async def startup_event():
     """应用启动事件"""
     if settings.DEBUG:
         Base.metadata.create_all(bind=engine)
-        print("✅ NovaFinance 数据库表已初始化") # <--- 这里我也稍微改了个性化一点
+        print("✅ NovaFinance 数据库表已初始化") #
 
 @app.get("/")
 async def root():
     """根路径"""
     return {
-        "message": "欢迎使用 NovaFinance 财务系统", # <--- 这里改了，访问 localhost:8001 时会看到
-        "developer": "你的名字",                   # <--- 加个开发者署名，更像作业
+        "message": "欢迎使用 NovaFinance 财务系统", 
+        "developer": "吴明峰 信管T2301 8102230927",                  
         "version": "1.0.0 Final",
         "docs": "/docs",
     }
