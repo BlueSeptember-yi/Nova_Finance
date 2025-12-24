@@ -2,7 +2,7 @@
 ### 下一代智能企业财务管理系统 | Next-Gen Enterprise Financial System
 
 > **Nova Finance** 是现代化财务管理解决方案。我们致力于通过重构的前端交互体验（UI/UX）和容器化部署方案，为中小企业提供更高效、更直观的财务运营支持。
-
+> 可以直接通过网址http://43.136.71.218访问项目，也可以按照后续步骤进行本地部署。
 ---
 
 ## 🚀 项目亮点 (Key Highlights)
@@ -101,9 +101,9 @@
 
     ```
 
-4.  **访问系统**
+4.  **访问系统**（本地部署）
     *   前台页面: [http://localhost:8080](http://localhost:8080)
-    *   API 文档: [http://localhost:8001/docs](http://localhost:8001/docs)
+    *   API 文档: [http://localhost:8001/docs](http://localhost:8001/docs) 或直接访问网址：http://43.136.71.218/docs
 
 ---
 
